@@ -16,6 +16,7 @@ import struct
 import webbrowser
 import eel
 from flask.cli import run_command
+import hugchat
 import pvporcupine
 import pyaudio
 import pyautogui
@@ -185,6 +186,16 @@ def whatsApp(Phone, message, flag, name):
     pyautogui.hotkey('enter')
     speak(jarvis_message)
     
+    def chatBot(query):
+        user_input = query.lower()
+        chatBot = hugchat.ChatBot(compile_path="backend\cookie.json")
+        id = chatBot.new_conversation()
+        chatBot.change_conversation(id)
+        response = chatBot.get_response(user_input)
+        return response
 
 
 
+
+
+ 

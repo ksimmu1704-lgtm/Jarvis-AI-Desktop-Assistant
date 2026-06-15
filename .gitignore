@@ -1,0 +1,4 @@
+id = chatBot.new_conversation()
+chatBot.change_conversation(id)
+response = chatBot.get_response(user_input)
+return response
